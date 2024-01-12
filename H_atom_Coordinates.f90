@@ -2,6 +2,10 @@ program H_codes
         implicit none
         real :: x1, y1,z1, x2, y2,z2, stepSize
         integer :: i, nSteps
+        x2=0
+        y2=0
+        z2=0
+        
         print*, "atom 1 x coordinate" 
         read(*,*) x1, y1, z1
         print *, "step size "
@@ -11,7 +15,7 @@ program H_codes
 
         open(1, file= "H_coords.txt")
                 do i = 0,nSteps
-                        write(1, *)  '(',x1,y1,z1,')'
+                        write(1, *)  '(',x1,',',y1,',',z1,')'  ,'(',x2,',', y2,',',z2,')'
                         x1 = x1 -stepSize
                 end do
 
